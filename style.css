@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Jost", serif;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #06020b 0%, #1d1035 50%, #442269 100%);
+}
+
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.main-title {   
+    
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+}
+
+.iste-presents {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(137, 43, 226, 0.285);
+    padding: 8px 20px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.star-icon {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.presents-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.title{
+    background: url('Logo.svg') no-repeat center;
+    background-size: contain;
+    height: 80px;
+    padding-left: 220px;
+    line-height: 100px;
+    margin-bottom: 40px;
+
+}
+
+/*.main-title h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.5), 0 0 40px rgba(255, 165, 0, 0.3);
+    letter-spacing: 0.2em;
+    margin: 0 0 20px 0;
+    white-space: nowrap;
+}*/
+
+.event-description {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.highlight-date {
+    color: #ffa500;
+    font-weight: 700;
+}
+
+.get-tickets{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #ff8c00 0%, #ffa500 100%);
+    color: #000000;
+    font-family: "Jost", serif;
+    font-size: 1.0rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 15px rgba(255, 165, 0, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+}
+
+.get-tickets:hover{
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(255, 165, 0, 0.6),
+        0 4px 12px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(90deg, #ff9c00 0%, #ffb500 100%);
+}
+
+.get-tickets:active {
+    transform: translateY(0);
+}
+
+.ticket-icon {
+    font-size: 1.2rem;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: rgba(26, 11, 46, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+
+.navbar-logo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-container .navbar-menu{
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navbar-container .navbar-menu li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+
+.navbar-container .navbar-menu li a:hover,
+.navbar-container .navbar-menu li a.active{
+    color: #1a0b2e;
+    background: #ffa500;
+    border: 2px solid #ffa500;
+}
+
+.navbar-toggle{
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/*Responsive style*/
+@media (max-width: 880px){
+    .navbar{
+        backdrop-filter: none;
+    }
+
+    .event-description{
+        font-size: 1rem;
+    }
+
+    .get-tickets{
+        font-size: 1rem;
+        padding: 5px 20px;
+    }
+
+    .iste-presents{
+        margin-bottom: 30px;
+    }
+
+    .title{
+        margin-bottom: 30px;
+    }
+
+    .navbar-container .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        background: rgba(26, 11, 46, 0.95);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-container .navbar-menu.active{
+        display: flex;
+    }
+
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+    @media (max-width: 480px){
+        .navbar-container{
+            padding: 0 1rem;
+        }
+
+        .navbar-logo{
+            font-size: 1.2rem;
+        }
+
+        .event-description{
+            font-size: 0.9rem;
+        }
+
+        .presents-text{
+            font-size: 0.8rem;
+        }
+
+        .title{
+            margin-bottom: 0px;
+        }
+        
+        .iste-presents{
+            margin-bottom: 0px;
+        }
+
+        .get-tickets{
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+        .navbar-container .navbar-menu li a{
+            font-size: 1.2rem;
+            padding: 3px 15px;
+        }
+    }
